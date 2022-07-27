@@ -22,7 +22,8 @@ public class ListFiles {
         try {
             writer.close();
             reader.close();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

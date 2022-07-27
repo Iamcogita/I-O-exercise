@@ -13,12 +13,15 @@ public class CheckIfExists {
                 throw new WrongInputException("Please input right path");
             }
             System.out.println("Your file exists!");
-        } catch (IOException | WrongInputException e) {
+
+        }
+        catch (IOException | WrongInputException e) {
             System.out.println(e.getMessage());
         }
         try {
             reader.close();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
         return true;
