@@ -2,24 +2,28 @@ import java.io.*;
 
 public class CheckIfExists {
 
-    public CheckIfExists(){}
-
-    public boolean CheckIfExistsBool() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public boolean CheckIfExistsBool() throws IOException{
+        BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Please input \"path/file\" to check is it exists:");
         try {
-            File path = new File(reader.readLine());
+            File path = new File(reader2.readLine());
             if (!path.exists()) {
-                throw new WrongInputException("Please input right path");
-            }
-            System.out.println("Your file exists!");
 
+                try {
+                    throw new WrongInputException("Please input right path");
+                } catch (WrongInputException e) {
+                    System.out.println(e);
+                    CheckIfExistsBool();
+                }
+
+                System.out.println("Your file exists!");
+            }
         }
-        catch (IOException | WrongInputException e) {
+        catch (IOException e) {
             System.out.println(e.getMessage());
         }
         try {
-            reader.close();
+            reader2.close();
         }
         catch (IOException e) {
             e.printStackTrace();
