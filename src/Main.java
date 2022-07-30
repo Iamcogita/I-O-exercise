@@ -1,13 +1,15 @@
-import java.io.*;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
 
-        new ListFiles().ListFilesMethod();
+        //new ListFiles().ListFilesMethod();
 
-        new CheckIfExists().CheckIfExistsBool();
+        new ListFiles().filterFiles();
 
-        new CreateNewFile().CreateNewFilePathAndName();
+        //new CheckIfExists().CheckIfExistsBool();
+
+        //new CreateNewFile().CreateNewFilePathAndName();
 
     }
 }

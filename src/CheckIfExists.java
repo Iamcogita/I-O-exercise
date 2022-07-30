@@ -8,16 +8,14 @@ public class CheckIfExists {
         try {
             File path = new File(reader2.readLine());
             if (!path.exists()) {
-
                 try {
                     throw new WrongInputException("Please input right path");
                 } catch (WrongInputException e) {
                     System.out.println(e);
                     CheckIfExistsBool();
                 }
-
-                System.out.println("Your file exists!");
             }
+            System.out.println("Your file exists!");
         }
         catch (IOException e) {
             System.out.println(e.getMessage());
