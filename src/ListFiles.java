@@ -51,12 +51,7 @@ public class ListFiles implements FileFilter {
             }
             System.out.println("Show files that start with: ");
             File filesStartWith = new File(readerf.readLine());
-            String[] filesFound = path.list(new FilenameFilter() {
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.startsWith(filesStartWith.toString());
-                }
-            });
+            String[] filesFound = path.list((dir, name) -> name.startsWith(filesStartWith.toString()));
             System.out.println("Number of files found: " + filesFound.length);
             for (String file : filesFound) {
                 writerf.write(file + "\n");
